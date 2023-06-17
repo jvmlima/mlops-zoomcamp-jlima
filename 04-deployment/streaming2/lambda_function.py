@@ -3,7 +3,7 @@ import json
 import boto3
 import base64
 
-import mlflow
+# import mlflow
 
 kinesis_client = boto3.client('kinesis')
 
@@ -14,7 +14,7 @@ TEST_RUN = os.getenv('TEST_RUN', 'False') == 'True'
 os.environ["AWS_PROFILE"] = "default"
            
 logged_model = f's3://totaleren-mlflow-artifacts/2/{RUN_ID}/artifacts/model'
-model = mlflow.pyfunc.load_model(logged_model)
+# model = mlflow.pyfunc.load_model(logged_model)
 
 
 
@@ -26,9 +26,9 @@ def prepare_features(ride):
 
 
 def predict(features):
-    pred = model.predict(features)
-    return float(pred[0])
-    # pred = 10.0
+    # pred = model.predict(features)
+    # return float(pred[0])
+    pred = 10.0
     return pred
 
 

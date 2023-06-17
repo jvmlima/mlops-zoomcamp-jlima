@@ -122,10 +122,6 @@ python test.py
 ```bash
 docker build -t stream-model-duration:v1 .
 
-export AWS_ACCESS_KEY_ID="AKIA3IP5MFWKFV6ALE5O"
-export AWS_SECRET_ACCESS_KEY="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"
-export AWS_DEFAULT_REGION="us-east-1"
-
 docker run -it --rm \
     -p 8080:8080 \
     -e PREDICTIONS_STREAM_NAME="ride_predictions" \
@@ -136,16 +132,6 @@ docker run -it --rm \
     -e AWS_DEFAULT_REGION="${AWS_DEFAULT_REGION}" \
     stream-model-duration:v1
 
-docker run -it --rm \
-    -p 8080:8080 \
-    -e PREDICTIONS_STREAM_NAME="ride_predictions" \
-    -e RUN_ID="db63d368b9b34a7d9ef277929c04c78d" \
-    -e TEST_RUN="False" \
-    -e AWS_ACCESS_KEY_ID="AKIA3IP5MFWKFV6ALE5O" \
-    -e AWS_SECRET_ACCESS_KEY=="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" \
-    -e AWS_DEFAULT_REGION="us-east-1" \
-    stream-model-duration:v1
-```
 
 URL for testing:
 
